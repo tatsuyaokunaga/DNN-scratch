@@ -1,7 +1,7 @@
 import numpy as np
 from sklearn.model_selection import train_test_split
 import deep_network.FourLayerNet
-from utils import get_data　, cross_entropy_error
+from utils import get_data　, cross_entropy_error, softmax
 
 X,y = get_data()
 X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.2)
