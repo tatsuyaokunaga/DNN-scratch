@@ -33,6 +33,7 @@ model.compile(optimizer='adagrad',
 ### Functional APIで実装
 from keras.layers import Input, Dense,BatchNormalization,Dropout
 from keras.models import Model
+from keras.optimizers import Adagrad,SGD
 
 inputs = Input(shape=(784,))
 
