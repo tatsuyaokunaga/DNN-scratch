@@ -3,7 +3,7 @@ batch_size=64
 epochs= 20
 
 #### 学習プロセスの設定 ####
-# 最初のlayerでは，想定する入力データshapeを784次元に指定
+# 最初のlayerでは，想定する入力データshapeを784次元(mnistデータセット用)に指定
 
 # Sequenceモデル
 model= Sequential()
