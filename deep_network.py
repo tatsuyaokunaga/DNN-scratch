@@ -1,4 +1,4 @@
-class FourLayerNet:
+class FiveLayerNet:
     
     def __init__(self,input_size, hidden_size,output_size,lam=0.1,lr=0.01):
         #重みの初期化
