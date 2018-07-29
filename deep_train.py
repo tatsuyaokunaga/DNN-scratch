@@ -3,9 +3,7 @@ from sklearn.model_selection import train_test_split
 import deep_network.FourLayerNet
 from utils import get_data　, cross_entropy_error
 
-
 X,y = get_data()
-
 X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.2)
 
 train_loss_list = []
@@ -21,23 +19,22 @@ lr = 0.001
 #L2ノルム係数
 lam = 0.1
 
-train_size = x.shape[0]
+train_size = X_train.shape[0]
 
 iter_per_epoch = max(train_size/batch_size,1)
-#input_size, hidden_size, output_sizeはデータセットに合わせて入力
+#input_size, hidden_size, output_sizeはデータセットに合わせタプルで入力
 network = FourLayerNet(input_size, hidden_size, output_size)
 
 for i in range(iter_num):
     #ミニバッチ学習、ランダムにミニバッチを取得
     batch_mask = np.random.choice(train_size,batch_size)
     x_batch = X_train[batch_mask]
-    y_batch = y_train[batch_mask]
-    
+    y_batch = y_train[batch_mask]    
     # 勾配の計算
     grads = network.gradient(x_batch,y_batch)
     
     for key in ('W1','b1','W2','b2','W3','b3','W4','b4'):
-        network.params[key] -= lr*grads[key]
+       network.params[key] -= lr*grads[key]
     
     loss = network.loss(x_batch,y_batch,lam)
     train_loss_list.append(loss)
