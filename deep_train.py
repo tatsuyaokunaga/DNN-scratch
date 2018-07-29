@@ -1,6 +1,7 @@
 import numpy as np
 from sklearn.model_selection import train_test_split
 import deep_network.FourLayerNet
+from utils import get_data
 
 
 X,y = get_data()
