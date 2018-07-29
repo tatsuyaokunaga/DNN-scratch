@@ -19,7 +19,7 @@ lam = 0.1
 
 iter_per_epoch = max(train_size/batch_size,1)
 
-network = FourLayerNet(input_size = 784, hidden_size=100,output_size = 10)
+network = FourLayerNet(input_size, hidden_size, output_size)
 
 for i in range(iter_num):
     #ミニバッチ学習、ランダムにミニバッチを取得
