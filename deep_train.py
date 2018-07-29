@@ -1,5 +1,6 @@
 import numpy as np
 from sklearn.model_selection import train_test_split
+import deep_network.FourLayerNet
 
 
 X,y = get_data()
@@ -18,7 +19,7 @@ lam = 0.1
 
 iter_per_epoch = max(train_size/batch_size,1)
 
-network = MultiLayerNet(input_size = 784, hidden_size=100,output_size = 10)
+network = FourLayerNet(input_size = 784, hidden_size=100,output_size = 10)
 
 for i in range(iter_num):
     #ミニバッチ学習、ランダムにミニバッチを取得
