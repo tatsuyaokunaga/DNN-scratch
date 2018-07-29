@@ -50,3 +50,14 @@ for i in range(iter_num):
         train_acc_list.append(train_acc)
         test_acc_list.append(test_acc)
         print("train_acc, test_acc | " + str(train_acc) + " " + str(test_acc))
+        
+# accuracy曲線をプロット
+def accuracy_plot(train_acc, test_acc):
+    plt.figure(figsize=(12,8))
+    plt.title("Accuracys vs Iterations")
+    plt.xlabel('Iterations')
+    plt.ylabel('Accuracy')
+    plt.plot(train_acc, label="Training Accuracy")
+    plt.plot(test_acc, label="Validation Accuracy")
+    plt.legend()
+    plt.show()
