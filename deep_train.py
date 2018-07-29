@@ -36,7 +36,7 @@ for i in range(iter_num):
     # 勾配の計算
     grads = network.gradient(x_batch,y_batch)
     
-    for key in ('W1','b1','W2','b2','W3','b3'):
+    for key in ('W1','b1','W2','b2','W3','b3','W4','b4'):
         network.params[key] -= lr*grads[key]
     
     loss = network.loss(x_batch,y_batch,lam)
