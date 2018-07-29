@@ -1,7 +1,7 @@
 import numpy as np
 from sklearn.model_selection import train_test_split
 import deep_network.FourLayerNet
-from utils import get_data
+from utils import get_data　, cross_entropy_error
 
 
 X,y = get_data()
@@ -18,11 +18,13 @@ iter_num = 100000
 batch_size = 16
 # 学習率
 lr = 0.001
-
+#L2ノルム係数
 lam = 0.1
 
-iter_per_epoch = max(train_size/batch_size,1)
+train_size = x.shape[0]
 
+iter_per_epoch = max(train_size/batch_size,1)
+#input_size, hidden_size, output_sizeはデータセットに合わせて入力
 network = FourLayerNet(input_size, hidden_size, output_size)
 
 for i in range(iter_num):
