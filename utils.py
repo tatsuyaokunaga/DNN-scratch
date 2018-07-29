@@ -1,8 +1,9 @@
 import pandas as pd
 
 def get_data():
-    train = pd.read_csv('./input/train.csv')
-    test= pd.read_csv('./input/test.csv')
+    # ローカルに保存済みのデータセット(このフォルダと同じ階層のinputフォルダ内に「train.csv」「test.csv」を想定）を読み込む
+    train = pd.read_csv('../input/train.csv')
+    test= pd.read_csv('../input/test.csv')
     X = train.drop(["label"],axis=1)
     X =X.values
     y = np.array(train["label"])
