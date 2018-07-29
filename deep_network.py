@@ -24,38 +24,32 @@ class FourLayerNet:
         a2=np.tanh(z2)
         z3=np.dot(a2,W3)+b3
         a3=np.tanh(z3)
-        z4=np.dot(a3,W4)+b4
-        
-        y = softmax(z4)
-               
+        z4=np.dot(a3,W4)+b4    
+        y = softmax(z4)               
         return y
     
     def loss(self,x,t,lam):
         W1,W2,W3,W4 = self.params['W1'],self.params['W2'], self.params['W3'], self.params['W4']
         b1,b2,b3,b4 = self.params['b1'],self.params['b2'],self.params['b3'],self.params['b4']
-        y = self.predict(x)
-        
+        y = self.predict(x)        
         return cross_entropy_error(y,t,W1,W2,W3,W4,lam)
     
     
     def accuracy(self,x,t):
         y = self.predict(x)
         y = np.argmax(y,axis=1)
-        t = np.argmax(t,axis=1)
-        
+        t = np.argmax(t,axis=1)       
         accuracy = np.sum(y==t) / float(x.shape[0])
-        
         return accuracy
     
     def gradient(self,x,t):
         self.lam
         W1,W2,W3,W4 = self.params['W1'],self.params['W2'] ,self.params['W3'],self.params['W4']
         b1,b2,b3,b4 = self.params['b1'],self.params['b2'],self.params['b3'],self.params['b4']
+        
         grads={}
         
-        batch_num = x.shape[0]
         #forward
-        
         z1 = np.dot(x,W1)+b1
         a1=np.tanh(z1)
         z2=np.dot(a1,W2)+b2
@@ -67,6 +61,7 @@ class FourLayerNet:
         y = softmax(z4)
         
         #backward
+        batch_num = x.shape[0]
         dy = (y-t)/batch_num
     
         grads['W4'] = np.dot(a3.T, dy) + self.lam*W4
