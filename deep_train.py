@@ -14,8 +14,11 @@ test_acc_list = []
 
 #hyper-parameter
 iter_num = 100000
+#バッチ数
 batch_size = 16
+# 学習率
 lr = 0.001
+
 lam = 0.1
 
 iter_per_epoch = max(train_size/batch_size,1)
