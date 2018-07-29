@@ -1,6 +1,6 @@
 import numpy as np
 from sklearn.model_selection import train_test_split
-import deep_network.FourLayerNet
+import deep_network.FiveLayerNet
 from utils import get_data　, cross_entropy_error, softmax
 
 X,y = get_data()
