@@ -9,8 +9,6 @@ X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.2)
 train_loss_list = []
 train_acc_list= []
 test_acc_list = []
-# １エポックあたりの繰り返し数
-# train_size = X_train.shape[0]
 
 #hyper-parameter
 iter_num = 100000
